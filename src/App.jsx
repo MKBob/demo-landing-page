@@ -1,7 +1,8 @@
 import './App.css'
-import Footer from './components/Footer'
+import Card from './components/Card'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
+import Products from './components/Products'
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
     <div className="global-bg min-h-screen">
       <Navbar />
       <Home />
-      <Footer />
+      <Products />
+      <Card />
     </div>
   )
 }

@@ -1,28 +1,51 @@
 import React from 'react'
 import group from "../components/images/group.png"
 import line from "../components/images/line.png"
-import HomeButtons from './HomeButtons'
+import { PlayCircle } from '@phosphor-icons/react'
+import logo from "../components/images/logo.png"
 const Home = () => {
     return (
-        <section className='mx-auto flex w-full max-w-6xl flex-col-reverse items-center gap-10 py-32 sm:px-0 md:flex-row md:items-start lg:gap-16'>
-            <div className='w-full md:w-1/2'>
-                <p className='text-sm font-semibold uppercase tracking-widest text-[#52BD94]'>Productivity Platform</p>
-                <h1 className='mt-4 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl lg:text-6xl'>
-                    We’re here to <br className='hidden sm:block' /> Increase your <br /> Productivity
-                </h1>
-                <div className='mt-4 w-24 sm:w-2/3'>
-                    <img src={line} alt='line accent' className='w-full' />
-                </div>
-                <p className='mt-6 text-base text-gray-600 sm:text-lg'>
-                    Let's make your work more organized and effortless using the Taskio Dashboard with the latest features for managing daily workflows.
-                </p>
-                <HomeButtons />
-            </div>
+        <>
 
-            <div className='flex w-full justify-center md:w-1/2'>
-                <img src={group} alt='Team collaborating illustration' className='h-auto w-full max-w-md object-contain sm:max-w-lg' />
+<div className='flex flex-col-reverse items-center gap-12 md:flex-row md:items-start md:justify-between py-10  mt-8 w-full px-6 md:w-[80%] md:px-0 mx-auto'>
+            {/* first div */}
+
+            <div className='text-center md:text-left flex-1'>
+                <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight'>
+                    We’re here to <br className='hidden md:block'/> Increase your <br className='hidden md:block'/> Productivity
+                    <div className='py-15 '>
+                        <img src={line} alt='line' className=''/>
+                    </div>
+                </h1>
+                <p className='text-base sm:text-lg md:text-xl text-gray-600'>
+                    Let's make your work more organize and easily using <br className='hidden md:block' /> the Taskio Dashboard  with many of the latest <br className='hidden md:block' /> featuresin managing work every day.
+                </p>
+                <div className='flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 py-15'>
+                    <button className="px-7 py-4 text-lg sm:text-xl rounded-4xl text-white cursor-pointer transition-colors bg-[#52BD94] w-full sm:w-auto">
+                        Try free trail
+                    </button>
+                    <p className='flex items-center justify-center gap-3 cursor-pointer text-lg text-gray-800'>
+                        <PlayCircle size={28} weight="light" />
+                        View Demo
+                    </p>
+
+                </div>
             </div>
-        </section>
+            {/* second div */}
+            <div className='flex-1 flex justify-center md:justify-end'>
+                <img src={group} alt='group' className='max-w-full md:max-w-md lg:max-w-lg'/>
+            </div>
+        </div>
+        <div className='flex flex-col items-center justify-between'>
+             <p className='text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight pb-10'>
+             More than 25,000 teams use Collabs
+             </p>
+             <div>
+                <img src={logo} alt="logo" className='pb-10'/>
+             </div>
+        </div>
+        </>
+       
     )
 }
 
