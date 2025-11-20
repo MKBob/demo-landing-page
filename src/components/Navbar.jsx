@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Button from './Button'
 
 const navLinks = [
   { label: 'Home', href: '#' },
@@ -12,15 +13,14 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-80 py-10 md:px-8">
-        <div>
-
-          <span className="text-3xl text-[#52BDAA] font-semibold tracking-tight">Bicaas</span>
+    <header>
+      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-6 sm:px-6 lg:px-0">
+        <div className="flex items-center gap-2">
+          <span className="text-3xl font-bold text-[#52BDAA] sm:text-4xl">Bicaas</span>
         </div>
 
         <button
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 text-gray-700 transition-colors hover:bg-gray-50 md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 text-gray-700 transition-colors hover:bg-gray-50 lg:hidden"
           aria-label="Toggle navigation"
           onClick={() => setIsMenuOpen((prev) => !prev)}
         >
@@ -36,45 +36,45 @@ export default function Navbar() {
           </div>
         </button>
 
-        <div className="hidden items-center gap-8 md:flex">
-          <ul className="flex items-center gap-6 text-sm font-medium text-gray-400">
+        <div className="hidden items-center gap-8 lg:flex">
+          <ul className="flex items-center gap-6 text-base font-medium text-gray-500">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a className="transition-colors text-xl cursor-pointer hover:text-gray-900" href={link.href}>
+                <a className="text-lg transition-colors hover:text-gray-900" href={link.href}>
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
           <div className="flex items-center gap-3">
-            <button className=" px-4 py-2 text-xl rounded-2xl text-gray-500 cursor-pointer transition-colors hover:bg-[#52BD94] hover:text-white">
+            <Button variant="secondary" size="md" className="text-base">
               Login
-            </button>
-            <button className="rounded-2xl bg-[#52BD94] px-4 py-2 text-xl text-white transition-colors cursor-pointer">
+            </Button>
+            <Button size="md" className="text-base">
               Sign up
-            </button>
+            </Button>
           </div>
         </div>
       </nav>
 
       {isMenuOpen && (
-        <div className="border-t border-gray-100 bg-white md:hidden">
+        <div className="border-t border-gray-100 bg-white lg:hidden">
           <ul className="flex flex-col gap-2 px-4 py-4 text-gray-700">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a className="block rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-50" href={link.href}>
+                <a className="block rounded-lg px-3 py-2 text-base font-medium hover:bg-gray-50" href={link.href}>
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
           <div className="flex flex-col gap-2 px-4 pb-4">
-            <button className=" px-4 py-2 text-xl rounded-lg text-gray-700 cursor-pointer transition-colors hover:bg-[#52BDAA]">
+            <Button variant="secondary" className="w-full rounded-lg text-base">
               Login
-            </button>
-            <button className="rounded-lg bg-[#52BD94]  px-4 py-2 text-xl text-white transition-colors hover:bg-[#52BD94] ">
+            </Button>
+            <Button className="w-full rounded-lg text-base">
               Sign up
-            </button>
+            </Button>
           </div>
         </div>
       )}
