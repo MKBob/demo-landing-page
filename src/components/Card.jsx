@@ -47,7 +47,7 @@ const Card = () => {
         {features.map((item, index) => (
           <div key={index} className="text-center sm:text-left">
             <img src={item.img} alt={item.title} className="mx-auto sm:mx-0" />
-            <p className="py-7 text-2xl font-bold text-gray-900">
+            <p className="py-5 text-2xl font-bold text-gray-900">
               {item.title}
             </p>
             <p className="text-[#A6A6A6]">{item.desc}</p>
